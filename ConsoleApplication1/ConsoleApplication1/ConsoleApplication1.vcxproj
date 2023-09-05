@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="data_type.cpp" />
+    <ClCompile Include="func.cpp" />
     <ClCompile Include="loop_cond.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="op.cpp" />
@@ -140,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dt.h" />
+    <ClInclude Include="func.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="loop_cond.h" />
     <ClInclude Include="op.h" />

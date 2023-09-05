@@ -24,6 +24,9 @@
     <Filter Include="소스 파일\string_control">
       <UniqueIdentifier>{2c31f223-0669-44fe-94ed-b75e76e08de5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\5.function">
+      <UniqueIdentifier>{25d12bd1-d86c-4ca8-94eb-f53d681da7db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="reverse_string.cpp">
@@ -44,6 +47,9 @@
     <ClCompile Include="loop_cond.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="func.cpp">
+      <Filter>소스 파일\5.function</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="index.md" />
@@ -62,6 +68,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="loop_cond.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="func.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

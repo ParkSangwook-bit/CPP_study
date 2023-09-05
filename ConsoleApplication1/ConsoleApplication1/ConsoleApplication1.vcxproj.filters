@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\1.variable">
+      <UniqueIdentifier>{5ebd7c9a-459f-4c45-8bf9-76cdc4eb4fbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\2.data_type">
+      <UniqueIdentifier>{23ac85cb-820c-4691-919b-af462fbea5d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\3.operator">
+      <UniqueIdentifier>{81577e65-c18b-4cbc-9f09-f1ca9bfa5504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\4.control_structure">
+      <UniqueIdentifier>{7a533b04-db41-467e-a113-face6bb502a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\string_control">
+      <UniqueIdentifier>{2c31f223-0669-44fe-94ed-b75e76e08de5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="reverse_string.cpp">
+      <Filter>소스 파일\string_control</Filter>
+    </ClCompile>
+    <ClCompile Include="var.cpp">
+      <Filter>소스 파일\1.variable</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="data_type.cpp">
+      <Filter>소스 파일\2.data_type</Filter>
+    </ClCompile>
+    <ClCompile Include="op.cpp">
+      <Filter>소스 파일\3.operator</Filter>
+    </ClCompile>
+    <ClCompile Include="loop_cond.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="index.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="var.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="dt.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="op.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="loop_cond.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

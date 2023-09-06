@@ -1,5 +1,6 @@
 #include "header.h"
 #include "func.h"
+#include <stdarg.h>
 
 void fn::level1() {
 	int a = 0, b = 0;
@@ -81,12 +82,39 @@ void fn::level7(){
 	cout << sum << ", " << subbed << endl;
 }
 
-void fn::level8(){
+int avg(int num_args, ...); //Prototype function
+int avg(int num_args, ...) { //Define function
+	va_list ap;
+	va_start(ap, num_args); //ap가 가장 첫 번째 가변인수를 가리킬 수 있도록 초기화
+	int arg = 0, result = 0;
+	for (int i = 0; i < num_args; i++) {
+		arg = va_arg(ap, int); //반복문을 돌리면서 인자값을 한개씩 받아옴
+		result += arg;
+	}
+	result = result / num_args;
+	va_end(ap);//가변인자 사용 종료
+	return result;
+};
 
+void fn::level8(){
+	int a = 1, b = 2, c = 3, d = 4;
+	cout << "avg func : " << avg(a, b, c, d) << endl;
+}
+
+template <typename T>
+T var_swap(T a, T b) {
+	T temp;
+	temp = a;
+	a = b;
+	b = temp;
+	free temp;
 }
 
 void fn::level9(){
-
+	int a = 5, b = 10;
+	cout << "a10 5, b=10" << endl;
+	var_swap(a, b);
+	cout << "swapped! now a = " << a << ", b = " << b << endl;
 }
 
 void fn::level10(){

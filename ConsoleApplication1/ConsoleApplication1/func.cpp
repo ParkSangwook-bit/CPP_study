@@ -4,7 +4,7 @@
 
 void fn::level1() {
 	int a = 0, b = 0;
-	cout << "¼ıÀÚ 2°³" << endl;
+	cout << "ì •ìˆ˜ 2ê°œ ì…ë ¥" << endl;
 	cin >> a >> b;
 
 	cout << "answer: " << a + b << endl;
@@ -13,14 +13,14 @@ void fn::level1() {
 
 void fn::level2(){
 	int a = 0, b = 0;
-	cout << "¼ıÀÚ 2°³" << endl;
+	cout << "ì •ìˆ˜ 2ê°œ ì…ë ¥" << endl;
 	cin >> a >> b;
 	cout << "answer: " << a * b;
 }
 
 void fn::level3(){
 	int a = 0, b = 0, c = 0;
-	cout << "¼ıÀÚ 3°³" << endl;
+	cout << "ì •ìˆ˜ 3ê°œ ì…ë ¥" << endl;
 	cin >> a >> b >> c;
 	cout << "answer:" << (a * b * c) / 3 << endl;
 }
@@ -34,10 +34,10 @@ double add(double a, double b) {
 }
 
 void fn::level4(){
-	//function overloading: °°Àº ÀÌ¸§ÀÇ ÇÔ¼ö¸¦ ¿©·¯°³ Á¤ÀÇÇÒ ¼ö ÀÖµµ·Ï ÇÑ´Ù.
+	//function overloading: ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 	int a = 1, b = 2;
-	double a = 1.0, b = 2.0;
-	cout << add(1, 2) << add(1.0, 2.0) << endl;
+	double c = 1.0, d = 2.0;
+	cout << add(a, b) << add(c, d) << endl;
 }
 
 int factorial(int n) {
@@ -49,13 +49,14 @@ int factorial(int n) {
 
 void fn::level5(){
 	/*
-	base case: Àç±Í°¡ ³¡³ª´Â Á¶°Ç, Áï ÇÔ¼ö°¡ ÀÚ±â ÀÚ½ÅÀ» ´õ´Â È£ÃâÇÏÁö ¾Ê°í °ªÀ» ¹İÈ¯ÇÏ´Â °æ¿ì
-	recursive case: ÇÔ¼ö°¡ ÀÚ±â ÀÚ½ÅÀ» ´Ù½Ã È£ÃâÇÏ´Â °æ¿ì
+	base case: ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½Ú±ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
+	recursive case: ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½Ú±ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ È£ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
 	*/
 	int a = 0;
 	cout << "recursive func. enter 1 number: ";
 	cin >> a;
-	factorial(a);
+	cout << factorial(a);
+	
 }
 
 void fn::level6(){
@@ -69,7 +70,7 @@ void fn::level6(){
 	for (int i = 0; i < size; i++) {
 		cout << arr[i] << " ";
 	}
-}
+} 
 
 void fn::level7(){
 	auto add = [](int a, int b) {return a + b;};
@@ -85,29 +86,29 @@ void fn::level7(){
 int avg(int num_args, ...); //Prototype function
 int avg(int num_args, ...) { //Define function
 	va_list ap;
-	va_start(ap, num_args); //ap°¡ °¡Àå Ã¹ ¹øÂ° °¡º¯ÀÎ¼ö¸¦ °¡¸®Å³ ¼ö ÀÖµµ·Ï ÃÊ±âÈ­
+	va_start(ap, num_args); //apï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¹ ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å³ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 	int arg = 0, result = 0;
 	for (int i = 0; i < num_args; i++) {
-		arg = va_arg(ap, int); //¹İº¹¹®À» µ¹¸®¸é¼­ ÀÎÀÚ°ªÀ» ÇÑ°³¾¿ ¹Ş¾Æ¿È
+		arg = va_arg(ap, int); //ï¿½İºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½é¼­ ï¿½ï¿½ï¿½Ú°ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½ï¿½ ï¿½Ş¾Æ¿ï¿½
 		result += arg;
 	}
 	result = result / num_args;
-	va_end(ap);//°¡º¯ÀÎÀÚ »ç¿ë Á¾·á
+	va_end(ap);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	return result;
 };
 
 void fn::level8(){
 	int a = 1, b = 2, c = 3, d = 4;
-	cout << "avg func : " << avg(a, b, c, d) << endl;
+	cout << "avg func : " << avg(4, a, b, c, d) << endl;
+	//4ëŠ” num_args. ë°˜ë“œì‹œ ì²« ë²ˆì§¸ ì¸ìë¡œ ê°€ë³€ ì¸ìì˜ ê°œìˆ˜ë¥¼ ì œê³µ
 }
 
 template <typename T>
-T var_swap(T a, T b) {
+void var_swap(T& a, T& b) { //aì™€ bë¥¼ ì „ë‹¬í•˜ê¸°ë§Œ í•˜ë©´, ë‚´ë¶€ì—ì„œë§Œ ê°’ì´ ë°”ë€œ. ë”°ë¼ì„œ í¬ì¸í„°ë¡œ ê°€ë¦¬ì¼œì•¼ í•¨.
 	T temp;
 	temp = a;
 	a = b;
 	b = temp;
-	free temp;
 }
 
 void fn::level9(){
@@ -117,7 +118,32 @@ void fn::level9(){
 	cout << "swapped! now a = " << a << ", b = " << b << endl;
 }
 
-void fn::level10(){
+void bubblesort(int arr[], int size) {
+	//int size = sizeof(arr) / sizeof(int);
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size - i - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				//swap
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
 
+void fn::level10(){
+	int arr[] = { 1,2,5,3,9,0 };
+	int size = sizeof(arr) / sizeof(int);
+	cout << "original array: " << endl;
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << "bubble sorting . . . " << endl;
+	bubblesort(arr, size);
+	cout << "sorted array: " << endl;
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
 }
 

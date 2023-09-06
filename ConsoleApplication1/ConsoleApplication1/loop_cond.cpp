@@ -42,7 +42,8 @@ void lc::level2(){
 }
 
 void lc::level3() {
-	int age = 0, char gen;
+	int age = 0;
+	char gen;
 	cin >> gen >> age;
 	if (gen == 'm') {
 		if (age <= 20) {

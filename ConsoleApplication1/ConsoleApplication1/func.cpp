@@ -118,11 +118,21 @@ void fn::level9(){
 	cout << "swapped! now a = " << a << ", b = " << b << endl;
 }
 
-void bubblesort(int arr[], int size) {
+typedef bool (*compareptr)(int, int);
+
+bool ascending(int a, int b) {
+	return a > b;
+}
+
+bool descending(int a, int b) {
+	return a < b;
+}
+
+void bubblesort(int arr[], int size, compareptr cmp) {
 	//int size = sizeof(arr) / sizeof(int);
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size - i - 1; j++) {
-			if (arr[j] > arr[j + 1]) {
+			if (cmp(arr[j], arr[j + 1])) {
 				//swap
 				int temp = arr[j];
 				arr[j] = arr[j + 1];
@@ -140,10 +150,22 @@ void fn::level10(){
 		cout << arr[i] << " ";
 	}
 	cout << "bubble sorting . . . " << endl;
-	bubblesort(arr, size);
-	cout << "sorted array: " << endl;
+	bubblesort(arr, size, ascending);
+	cout << "sorted array - ascend: " << endl;
 	for (int i = 0; i < size; i++) {
 		cout << arr[i] << " ";
 	}
-}
+	cout << endl;
+	bubblesort(arr, size, descending);
+	cout << "sorted array - descend: " << endl;
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+} // feat. GPT
+/*
+레벨 10에서 콜백함수가 적용된 부분은
+버블소트에서 인자로 정해지지 않은 값을 비교하는 ascending, descending 함수가 쓰이고 있다.
+그리고 해당 함수 인자가 사용되는 곳은 버블 소트의 내부의 정렬 직전 값 비교에서 cmp라는 함수포인터로써 쓰이고 있다.
+이렇게 콜백함수가 적용되어 있다.
+*/
 

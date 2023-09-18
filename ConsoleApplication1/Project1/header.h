@@ -5,6 +5,8 @@ using namespace std;
 #include <algorithm>
 #include <typeinfo>
 #include <vector>
+#include <list>
+#include <iterator>
 
 template <typename T>
 string getType(T var) {

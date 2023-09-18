@@ -1,3 +1,4 @@
+#include <iostream>
 #include "loop_cond.h"
 
 void lc::level1() {

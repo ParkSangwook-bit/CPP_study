@@ -1,5 +1,6 @@
 #include "header.h"
 #include "list.h"
+#include <algorithm>
 
 void ls::level1()
 {
@@ -117,6 +118,37 @@ void ls::level6()
 
 void ls::level7()
 {
+	list<int> mylist;
+	int n = 0, input = 0, k=0;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> input;
+		mylist.push_back(input);
+	}
+	for (const auto& elem : mylist) {
+		cout << elem << " ";
+	}
+	cout << "\nhow many times do you want to rotate?: ";
+	cin >> k;
+	cout << "\nwhich direction do you want to rotate?(L, R): ";
+	char d = 0;
+	cin >> d;
+	switch (d) {
+		case 'l':
+		case 'L':
+			rotate(mylist.begin(), next(mylist.begin(),k), mylist.end());
+			break;
+		case 'r':
+		case 'R':
+			rotate(mylist.rbegin(), next(mylist.rbegin(), k), mylist.rend());
+			break;
+		default:
+			cout << "something's wrong\n";
+			break;
+	}
+	for (const auto& elem : mylist) {
+		cout << elem << " ";
+	}
 }
 
 void ls::level8()

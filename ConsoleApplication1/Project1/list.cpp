@@ -151,27 +151,29 @@ void ls::level7()
 	}
 }
 
-void findCombinations(vector<int> &v, vector<int> &comb, int start, int r) {
-	if (r == 0) {
-		for (int i = 0; i < comb.size();++i) {
-			cout << comb[i] << ' ';
+
+void findPermutation(list<int> &list) {
+	// cast list to vector
+	vector<int> myvector(list.begin(), list.end());
+	//sorting vector as ascending
+	sort(myvector.begin(), myvector.end());
+
+	//find permutations
+	do {
+		for (int i : myvector) {
+			cout << i << ' ';
 		}
 		cout << endl;
-		return;
-	}
+	} while (next_permutation(myvector.begin(), myvector.end()));
 
-	for (int i = start; i <= v.size() - r; ++i) {
-		comb.push_back(v[i]);
-		findCombinations(v, comb, i + 1, r - 1);
-		comb.pop_back();
-	}
+	//cast vector to list again
+	list.assign(myvector.begin(), myvector.end());
 }
 
 void ls::level8()
 {
 	list<int> mylist;
-	vector<int> comb;
-	int n = 0, input = 0, k = 0;
+	int n = 0, input = 0;
 	cin >> n;
 	for (int i = 0; i < n; i++) {
 		cin >> input;
@@ -180,17 +182,13 @@ void ls::level8()
 	for (const auto& elem : mylist) {
 		cout << elem << " ";
 	}
-	vector<int> myvector(mylist.begin(), mylist.end());
-	//r is combination's length
-	//by changing r value from 1 to mylist.size(), you can find all combinations
-	for (int r = 1; r <= mylist.size(); r++) {
-		findCombinations(myvector, comb, 0, r);
-	}
-
+	//sort to find permutations
+	findPermutation(mylist);
 }
 
 void ls::level9()
 {
+
 }
 
 void ls::level10()

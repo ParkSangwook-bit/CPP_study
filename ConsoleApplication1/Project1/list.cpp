@@ -151,8 +151,42 @@ void ls::level7()
 	}
 }
 
+void findCombinations(vector<int> &v, vector<int> &comb, int start, int r) {
+	if (r == 0) {
+		for (int i = 0; i < comb.size();++i) {
+			cout << comb[i] << ' ';
+		}
+		cout << endl;
+		return;
+	}
+
+	for (int i = start; i <= v.size() - r; ++i) {
+		comb.push_back(v[i]);
+		findCombinations(v, comb, i + 1, r - 1);
+		comb.pop_back();
+	}
+}
+
 void ls::level8()
 {
+	list<int> mylist;
+	vector<int> comb;
+	int n = 0, input = 0, k = 0;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> input;
+		mylist.push_back(input);
+	}
+	for (const auto& elem : mylist) {
+		cout << elem << " ";
+	}
+	vector<int> myvector(mylist.begin(), mylist.end());
+	//r is combination's length
+	//by changing r value from 1 to mylist.size(), you can find all combinations
+	for (int r = 1; r <= mylist.size(); r++) {
+		findCombinations(myvector, comb, 0, r);
+	}
+
 }
 
 void ls::level9()

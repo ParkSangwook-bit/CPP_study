@@ -147,15 +147,81 @@ void dq::level9()
 	cout << "maximum sum is: " << maxSum << endl;
 }
 
+//원형 데크 구현 : deque를 사용하여 원형 데크(circular deque)를 구현하세요.
+// //원형 데크는 끝과 시작이 연결된 형태의 데크입니다.이 원형 데크에는 원소 추가, 삭제, 조회 등의 기본 연산을 구현해야 합니다.
+
+class CircularDeque {
+private:
+	deque<int> dq;
+	int capacity;
+	int size;
+
+public:
+	CircularDeque(int cap) : capacity(cap), size(0) {}
+
+	bool insertFront(int value) {
+		if (size == capacity) return false;
+		dq.push_front(value);
+		++size;
+		return true;
+	}
+
+	bool insertRear(int value) {
+		if (size == capacity) return false;
+		dq.push_back(value);
+		++size;
+		return true;
+	}
+
+	bool deleteFront() {
+		if (size == 0) return false;
+		dq.pop_front();
+		--size;
+		return true;
+	}
+
+	bool deleteRear() {
+		if (size == 0) return false;
+		dq.pop_back();
+		--size;
+		return true;
+	}
+
+	int getFront() {
+		if (size == 0) return -1;
+		return dq.front();
+	}
+
+	int getRear() {
+		if (size == 0) return -1;
+		return dq.back();
+	}
+
+	bool isFull() {
+		return size == capacity;
+		//이거 좋은거 같음(if 연산문 필요없음)
+	}
+
+	bool isEmpty() {
+		return size == 0;
+	}
+};
+
 void dq::level10()
 {
-}
+	CircularDeque cdq(5);
 
+	cdq.insertFront(1);
+	cdq.insertFront(2);
+	cdq.insertRear(3);
+	cdq.insertRear(4);
 
-/*
+	cout << "Front: " << cdq.getFront() << endl;
+	cout << "Rear: " << cdq.getRear() << endl;
 
+	cdq.deleteRear();
+	cdq.deleteFront();
 
-
-
-원형 데크 구현: deque를 사용하여 원형 데크(circular deque)를 구현하세요. 원형 데크는 끝과 시작이 연결된 형태의 데크입니다. 이 원형 데크에는 원소 추가, 삭제, 조회 등의 기본 연산을 구현해야 합니다.
-*/
+	cout << "Front after deletion: " << cdq.deleteFront() << endl;
+	cout << "Rear atter deletion: " << cdq.deleteRear() << endl;
+	}

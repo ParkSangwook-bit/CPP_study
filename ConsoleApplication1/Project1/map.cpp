@@ -104,38 +104,87 @@ void mp::level6()
 	myMap["frined4"] = 27;
 
 	cout << "Is there friend3?" << endl;
-	auto it = myMap.find("friend3");
+	auto it = myMap.find("friend3");	//find()
 	if (it != myMap.end()) cout << "friend3! you there!" << endl; //if there are no value, return `end()` iterator
 
-	cout << "Is there friend2?" << endl;
+	cout << "Is there friend2?" << endl;	//count()
 	if(myMap.count("friend2")) cout << "friend2! you there!" << endl; //bool value
 }
-
+//Value Accumulation : map을 순회하며 value의 총합을 구해보세요.
 void mp::level7()
 {
+	map<string, int> myMap;
+	int mapSum = 0;
+	myMap.insert(make_pair("Alice", 25));
+	myMap["Mike"] = 35;
+	myMap.emplace("John", 12);
+	myMap.insert_or_assign("Alice", 20);
+
+	for (auto it = myMap.begin(); it != myMap.end(); ++it) {
+		mapSum += it->second;
+		cout << "Key: " << it->first << " | Value: " << it->second << endl;
+	}
+	cout << "Sum of Map's value: " << mapSum;
 }
 
+//Map Sorting : map은 기본적으로 key를 기준으로 정렬됩니다.value를 기준으로 정렬된 새로운 map을 생성해보세요.
 void mp::level8()
 {
+	map<string, int> initMap;
+	map<int, string> outputMap;
+
+	// add elements to initMap
+	initMap["me"] = 23;
+	initMap["friend1"] = 24;
+	initMap["friend2"] = 25;
+	initMap["friend3"] = 34;
+	initMap["frined4"] = 27;
+
+	cout << "Transplanting init map to output map. [<string, int> -> <int, string>] . . . " << endl;
+
+	for (auto& pair : initMap) {
+		outputMap[pair.second] = pair.first;
+	}
+
+	for (auto& pair : outputMap) {
+		cout << "Key: " << pair.first << " | Value: " << pair.second << endl;
+	}
+	//interested point: when pair.first is <int>, they are ordered by key's numerical size
 }
 
+map<int, int> findintersection(const map<int, int>& mp1, const map<int, int>& mp2) {
+	map<int, int> intersection;
+	for (auto& pair : mp1) {
+		if ((mp2.find(pair.first) != mp2.end()) && (mp2.at(pair.first) == pair.second)) {
+			intersection[pair.first] = pair.second;
+		}
+	}
+
+	return intersection;
+}
+
+//Map Intersection : 두 개의 map에서 공통된 key만을 가진 새로운 map을 생성해보세요.
 void mp::level9()
 {
+	std::map<int, int> map1 = { {1, 2}, {2, 3}, {3, 4} };
+	std::map<int, int> map2 = { {2, 3}, {3, 4}, {4, 5} };
+
+	map<int, int> intersection = findintersection(map1, map2);
+
+	for (const auto& pair : intersection) {
+		cout << "Key: " << pair.first << " | Value: " << pair.second << endl;
+	}
 }
 
+//Custom Comparator : custom comparator를 사용하여 key의 정렬 순서를 변경해보세요.
 void mp::level10()
 {
+
 }
 
 
 /*
-중급
-Value Accumulation: map을 순회하며 value의 총합을 구해보세요.
-
 고급
-Map Sorting: map은 기본적으로 key를 기준으로 정렬됩니다. value를 기준으로 정렬된 새로운 map을 생성해보세요.
-Map Intersection: 두 개의 map에서 공통된 key만을 가진 새로운 map을 생성해보세요.
-Custom Comparator: custom comparator를 사용하여 key의 정렬 순서를 변경해보세요.
 */
 
 /*

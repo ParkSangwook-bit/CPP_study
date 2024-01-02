@@ -7,6 +7,7 @@ using namespace std;
 #include <vector>
 #include <list>
 #include <iterator>
+#include <algorithm>
 
 template <typename T>
 string getType(T var) {

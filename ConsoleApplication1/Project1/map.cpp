@@ -1,6 +1,5 @@
 #include "header.h"
 #include "map.h"
-#include <algorithm>
 
 //Map Initialization : 빈 map을 생성하고, 문자열을 key로, 정수를 value로 가지는 5개의 key - value 쌍을 삽입하고 출력해보세요.
 void mp::level1()
@@ -176,10 +175,24 @@ void mp::level9()
 	}
 }
 
+struct Compare { //user custom comparator
+	bool operator()(const int& a, const int& b) const {
+		return a < b;
+	}
+};
+
 //Custom Comparator : custom comparator를 사용하여 key의 정렬 순서를 변경해보세요.
 void mp::level10()
 {
+	map<int, string, Compare> myMap;
+	myMap[50] = "test";
+	myMap[100] = "for";
+	myMap[1] = "compare";
+	myMap[20] = "map";
 
+	for (const auto& pair : myMap) {
+		cout << "Key: " << pair.first << " | Value: " << pair.second << endl;	
+	}
 }
 
 

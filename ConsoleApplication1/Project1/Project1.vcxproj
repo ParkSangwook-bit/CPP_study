@@ -131,6 +131,7 @@
     <ClCompile Include="deque.cpp" />
     <ClCompile Include="list.cpp" />
     <ClCompile Include="map.cpp" />
+    <ClCompile Include="set.cpp" />
     <ClCompile Include="vector.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +139,7 @@
     <ClInclude Include="header.h" />
     <ClInclude Include="list.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="set.h" />
     <ClInclude Include="vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

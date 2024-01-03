@@ -58,17 +58,25 @@ void st::level3()
 	}
 }
 
-//범위에 따른 원소 삭제 - std::set에서 lower_bound와 upper_bound를 사용하여 특정 범위의 원소를 삭제하는 실습을 해보세요.
+//범위에 따른 원소 삭제 - std::set에서 lower_bound와 upper_bound를 사용하여 특정 범위의 원소를 삭제하는 실습을 해보세요.(내장 함수)
 void st::level4()
 {
-	set<int> mySet;
-	for (int i = 0; i <= 10; i++) {
-		mySet.insert(i);
-		//0~10 insertion
+	set<int> mySet = { 1,2,3,4,5,6 };
+	//lower bound보다 작은 원소들과 upper bound보다 큰 원소들을 삭제할 것
+	auto low = mySet.lower_bound(2);
+	auto up = mySet.upper_bound(5);
+
+	while (mySet.begin() != low) {
+		mySet.erase(mySet.begin());
 	}
 
+	while (up != mySet.end()) {
+		up = mySet.erase(up);
+	}
 
-
+	for (const auto& element : mySet) {
+		cout << element << endl;
+	}
 }
 
 void st::level5()
